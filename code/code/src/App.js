@@ -10,12 +10,16 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './pages/Dashboard';
 import Exercises from './components/Exercises';
+import MealDashboard from './pages/MealDashboard';
 
 export const userContext = createContext();
 
 const App = () => {
   const [loginStatus, setLoginStatus] = useState(false);
   const [username, setUsername] = useState(null);
+  const [MealDashboardStatus, setMealDashboardStatus] = useState(false);
+
+  console.log(MealDashboardStatus);
 
 
 
@@ -24,15 +28,20 @@ const App = () => {
     setLoginStatus(loginStatus);
   }
 
+  const handleMealStatus = (MealDashboardStatus) => {
+    setMealDashboardStatus(!MealDashboardStatus);
+  }
+
+
+
+
+
   if (!loginStatus) {
     return (
       <Routes>
-
         <Route path="/" element={<Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup handleLogin={handleLogin} />} />
-
       </Routes>
-
     )
   }
   return (
@@ -46,6 +55,7 @@ const App = () => {
           {/* <Route path="/signup" element={<Signup />} /> */}
 
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/MealDashboard" element={<MealDashboard handleMealStatus={handleMealStatus} />} />
         </Routes>
 
         <Footer />

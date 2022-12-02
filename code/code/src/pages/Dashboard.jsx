@@ -38,10 +38,7 @@ function Dashboard(props) {
                 <main className={classes.content + (!open ? classes.contentClosed : classes.appBarShift)}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="xl" className={classes.container}>
-                    <Calendar 
-                        
-                    />
-                    
+                    <Calendar/>
                 </Container>
                 </main>
                 

@@ -8,12 +8,12 @@ import Snackbar from '@mui/material/Snackbar';
 import CalendarBody from './calendar-body';
 import CalendarHead from './calendar-head';
 
-import AddActivity from '../AddActivity';
-import EditActivity from '../EditActivity';
-import ActivityList from '../ActivityList';
+import AddActivity from '../AddMeal';
+import EditActivity from '../EditMeal';
+import ActivityList from '../MealList';
 import { userContext } from '../../App';
 
-function Calendar(props) {
+function CalendarMeal(props) {
      
     const userInfo= useContext(userContext)
 
@@ -180,7 +180,7 @@ function Calendar(props) {
                     { editing
                         ?
                             <>
-                                <h3>Edit activity on {selectedDay.day}-{selectedDay.month + 1} </h3>
+                                <h3>Edit Meals on {selectedDay.day}-{selectedDay.month + 1} </h3>
                                 <EditActivity 
                                     activity={activity}
                                     activityKey={activityKey}
@@ -195,7 +195,7 @@ function Calendar(props) {
                             </>
                         :
                             <>
-                                <h3>Add activity on {selectedDay.day}-{selectedDay.month + 1} </h3>
+                                <h3>Add Meals on {selectedDay.day}-{selectedDay.month + 1} </h3>
                                 <AddActivity 
                                     selectedDay={selectedDay} 
                                     authUser={props.authUser}
@@ -210,7 +210,7 @@ function Calendar(props) {
             </Grid>
             <Grid item xs={12} md={7}>
                 <Paper className="paper">
-                <h3>Activities on {selectedDay.day}-{selectedDay.month + 1}</h3>
+                <h3>Meals on {selectedDay.day}-{selectedDay.month + 1}</h3>
                 <ActivityList
                     loading={loading}
                     activities={activities}
@@ -235,4 +235,4 @@ function Calendar(props) {
     )
 };
 
-export default Calendar;
+export default CalendarMeal;
