@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './pages/Dashboard';
 import Exercises from './components/Exercises';
+import Meal from './components/Meal/Meal';
 
 export const userContext = createContext();
 
@@ -46,6 +47,7 @@ const App = () => {
           {/* <Route path="/signup" element={<Signup />} /> */}
 
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/Mealdashboard" element={<Meal />} />
         </Routes>
 
         <Footer />

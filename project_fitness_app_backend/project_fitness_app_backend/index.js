@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
 //import {update,deletetodo, signup, login, workout} from './Controllers/controller.js'
-import {signup, login, workout, patchWorkout, deleteW, allWorkouts} from './Controllers/controller.js'
+import {signup, login, workout, patchWorkout, deleteW, allWorkouts, allMeals, patchMeal, deleteM, meal} from './Controllers/controller.js'
 
 import express from 'express';
 import cors from 'cors';
@@ -38,6 +38,13 @@ app.patch('/updateWorkout/:id',patchWorkout)
 app.delete('/deleteWorkout/:id',deleteW)
 // app.patch('/update-todo/:id',update)
 // app.delete('/delete/:id',deletetodo)
+
+app.get('/getMeal',allMeals)
+
+app.post('/meal', meal);
+app.patch('/updateMeal/:id',patchMeal)
+app.delete('/deleteMeal/:id',deleteM)
+
 
 
 
