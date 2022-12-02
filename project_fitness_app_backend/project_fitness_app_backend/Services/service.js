@@ -1,4 +1,5 @@
 import { request } from 'express';
+import mealModel from '../Models/mealModel.js';
 import todoModel from '../Models/models.js';
 import workoutModel from '../Models/workoutModel.js';
 
@@ -73,6 +74,64 @@ export const deleteWorkout= async(req,res)=>{
     //     console.log(error); // Failure
     // });
 }
+
+
+// -----------------------------------------------------------------------
+
+
+export const deleteMeal= async(req,res)=>{
+    try{
+    let deletedMeal= await mealModel.deleteOne({_id: req.params.id })
+    console.log("Deleteddddd",deletedMeal)
+    }
+    catch(err){
+        console.log("Error",err)
+    }
+}
+
+
+export const updateMeal=async(req)=>{
+    console.log(req.body)
+         let meal = await mealModel.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new: true}
+        ).exec()
+        console.log("aedfsdfsd",meal)
+        return meal
+
+        }
+
+
+export const addMeal=async(req)=>{
+
+        console.log("insde add meal")
+
+
+        console.log(req.body)
+        let meal = new mealModel(req.body);
+        return (await meal.save());
+        }
+
+
+export const findallMeals=async(req) =>{
+        console.log("PARAMS",req.params)
+        const allMeals= await mealModel.find({username:req.query.username, date:req.query.date});
+        console.log(allMeals)
+        return allMeals;
+                        };
+                        
+
+
+
+
+
+
+
+
+
+
+
 
 
 

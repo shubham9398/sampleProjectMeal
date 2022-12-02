@@ -1,5 +1,5 @@
 //import {deleteTodoService,updateTodoService,findallTodosService, checkLogin, addNewUser, addWorkout} from '../Services/service.js'
-import {checkLogin, addNewUser, addWorkout, updateWorkout, deleteWorkout, findallWorkout} from '../Services/service.js'
+import {checkLogin, addNewUser, addWorkout, updateWorkout, deleteWorkout, findallWorkout,deleteMeal,updateMeal,addMeal,findallMeals} from '../Services/service.js'
 
 
 export const  allWorkouts= async(req,res)=>{
@@ -80,7 +80,60 @@ try {
       res.status(500).send(error);
     }
 
+
 }
+
+// ------------------------------------------------------
+
+export const  allMeals= async(req,res)=>{
+  console.log("PARAMS",req.params)
+  try {
+    const meal=await findallMeals(req,res);
+    console.log("PARAMS",req.params)
+    console.log("GET AAAALL",meal)
+    res.send(meal);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
+
+export const deleteM= async(req, res)=>{
+  try{
+    deleteMeal(req,res);
+    res.status(200).send("Deleted Meal")   
+  }
+    catch(error){
+      res.status(500).send(error);
+    }
+
+
+}
+
+
+export const patchMeal= async(req,res)=>{
+  try {
+    const resp=await updateMeal(req);
+    res.status(200).send(resp);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+  }
+
+
+  export const  meal= async(req,res)=>{
+
+    try {
+
+      console.log("inside meal method")
+      const resp=await addMeal(req);
+      res.status(200).send(resp);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+    }
+
+
+
         
     
 
