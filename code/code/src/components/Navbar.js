@@ -28,7 +28,8 @@ const Navbar = () => {
         <Link to="/" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Home</Link>
         
         <a href='#exercises' style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Exercises</a>
-        <Link to="/dashboard" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Dashboard</Link>
+        <Link to="/dashboard" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Exsercises Dashboard</Link>
+        <Link to="/Mealdashboard" style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Meal Dashboard</Link>
 
       </Stack>
       <Stack  direction="row"
