@@ -97,7 +97,7 @@ export const updateMeal=async(req)=>{
             req.body,
             {new: true}
         ).exec()
-        console.log("aedfsdfsd",meal)
+        console.log("meal update",meal)
         return meal
 
         }

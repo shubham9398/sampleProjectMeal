@@ -55,25 +55,25 @@ function ActivityList(props) {
                             <TableBody>
                                 {
                                     Object.values(activities).map((activity, i) => {
-                                        let { name, type, duration, _id } = activity;
-                                        switch (activity.type) {
+                                        let { name,nutrients,calories, _id } = activity;
+                                        switch (activity.nutrients) {
                                             case "1":
-                                                type = "Protein";
+                                                nutrients = "Protein";
                                                 break;
                                             case "2":
-                                                type = "Carbohydrates";
+                                                nutrients = "Carbohydrates";
                                                 break;
                                             case "3":
-                                                type = "Fats";
+                                                nutrients = "Fats";
                                                 break;
                                             default:
-                                                type = "Not set";
+                                                nutrients = "Not set";
                                         };
                                         return (
                                             <TableRow key={_id}>
                                                 <TableCell>{name}</TableCell>
-                                                <TableCell>{type}</TableCell>
-                                                <TableCell>{duration}</TableCell>
+                                                <TableCell>{nutrients}</TableCell>
+                                                <TableCell>{calories}</TableCell>
                                                 <TableCell>
                                                     <DeleteIcon
                                                         onClick={e => deleteActivity(_id)}

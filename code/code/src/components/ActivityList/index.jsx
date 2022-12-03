@@ -15,7 +15,7 @@ function ActivityList(props) {
     const { loading, activities, editActivity, setOpenSnackbar, setSnackbarMsg, setEditing, handleDelete } = props;
 
     const deleteActivity = (i) => {
-        fetch(`http://localhost:5001/deleteWorkout/${i}`, {
+        fetch(`http://localhost:5001/deleteMeal/${i}`, {
             method: 'Delete'
         }).then((response) => {
             handleDelete(i);

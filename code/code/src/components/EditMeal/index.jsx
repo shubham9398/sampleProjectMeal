@@ -29,8 +29,8 @@ function EditActivity(props) {
     // Set default activity object
     const defaultActivity = {
         name: activity.name,
-        type: activity.type,
-        duration: activity.duration,
+        nutrients: activity.nutrients,
+        calories: activity.calories,
         date: activity.date
     }
 
@@ -38,16 +38,20 @@ function EditActivity(props) {
 
     const handleChange = e => {
         const { name, value } = e.target
+
+
         setNewActivity({
             ...newActivity,
-            [name]: value
+            [name]: value,
+           
+
         });
     }
 
     const handleSlider = e => {
         console.log("TARDET",e.target)
-        const duration = `${e.target.value} mins`;
-        setActivity({ ...activity, duration: duration });
+        const calories = `${e.target.value} cal`;
+        setActivity({ ...activity, calories: calories });
     }
 
     const isValid = newActivity.name === '';
@@ -56,7 +60,7 @@ function EditActivity(props) {
     const handleSubmit = action => {
 
 
-        const response = fetch(`http://localhost:5001/updateWorkout/${activity._id}`, {      //Api call to update the todo status
+        const response = fetch(`http://localhost:5001/updateMeal/${activity._id}`, {      //Api call to update the todo status
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -103,7 +107,7 @@ function EditActivity(props) {
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={newActivity.type}
+                        value={newActivity.nutrients}
                         style={{ minWidth: '100%' }}
                         name="type"
                         onChange={handleChange}

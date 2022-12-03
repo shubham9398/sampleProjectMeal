@@ -28,8 +28,8 @@ function AddActivity(props) {
     // Set default activity object
     const defaultActivity = {
         name: '',
-        type: '1',
-        duration: '60',
+        nutrients: '1',
+        calories: '60',
         date: queryDate,
         username: userInfo.username || 'Amit Yadav' 
     }
@@ -48,8 +48,8 @@ function AddActivity(props) {
 
     const handleSlider = e => {
         console.log("TARDET",e.target)
-        const duration = `${e.target.value}`;
-        setActivity({ ...activity, duration: duration });
+        const calories = `${e.target.value}`;
+        setActivity({ ...activity, calories: calories });
     }
 
     const isValid = activity.name === '';
@@ -58,7 +58,7 @@ function AddActivity(props) {
     const handleSubmit = () => {
         console.log(activity)
 
-        fetch("http://localhost:5001/workout", {
+        fetch("http://localhost:5001/meal", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ function AddActivity(props) {
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={activity.type}
+                        value={activity.nutrients}
                         style={{ minWidth: '100%' }}
                         name="type"
                         onChange={handleChange}

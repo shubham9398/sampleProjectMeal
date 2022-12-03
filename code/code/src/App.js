@@ -10,11 +10,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './pages/Dashboard';
 import Exercises from './components/Exercises';
-<<<<<<< HEAD
 import MealDashboard from './pages/MealDashboard';
-=======
 import Meal from './components/Meal/Meal';
->>>>>>> refs/remotes/origin/main
 
 export const userContext = createContext();
 
@@ -59,11 +56,8 @@ const App = () => {
           {/* <Route path="/signup" element={<Signup />} /> */}
 
           <Route path="/dashboard" element={<Dashboard />} />
-<<<<<<< HEAD
           <Route path="/MealDashboard" element={<MealDashboard handleMealStatus={handleMealStatus} />} />
-=======
-          <Route path="/Mealdashboard" element={<Meal />} />
->>>>>>> refs/remotes/origin/main
+
         </Routes>
 
         <Footer />

@@ -26,7 +26,6 @@ function Dashboard(props) {
   // }
 
   return (
-<<<<<<< HEAD
     
             <div className={classes.root}>
                 <CssBaseline />
@@ -43,24 +42,5 @@ function Dashboard(props) {
          )
     
 };
-=======
-    <div className={classes.root}>
-      <CssBaseline />
->>>>>>> refs/remotes/origin/main
-
-      <main
-        className={
-          classes.content +
-          (!open ? classes.contentClosed : classes.appBarShift)
-        }
-      >
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="xl" className={classes.container}>
-          <Calendar />
-        </Container>
-      </main>
-    </div>
-  );
-}
 
 export default Dashboard;

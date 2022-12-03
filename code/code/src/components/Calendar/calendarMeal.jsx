@@ -102,7 +102,7 @@ function CalendarMeal(props) {
         //     // setEditing(false); Add later
         // });
 
-        const response = await fetch(`http://localhost:5001/getWorkout?username=${userInfo.username}&date=${queryDate}`, {
+        const response = await fetch(`http://localhost:5001/getMeal?username=${userInfo.username}&date=${queryDate}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
