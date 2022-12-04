@@ -103,7 +103,7 @@ function AddActivity(props) {
                         id="demo-simple-select"
                         value={activity.nutrients}
                         style={{ minWidth: '100%' }}
-                        name="type"
+                        name="nutrients"
                         onChange={handleChange}
                     >
                         <MenuItem value={'1'}>Protein</MenuItem>

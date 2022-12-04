@@ -47,7 +47,7 @@ function EditActivity(props) {
     const handleSlider = e => {
         console.log("TARDET",e.target)
         const duration = `${e.target.value} mins`;
-        setActivity({ ...activity, duration: duration });
+        setNewActivity({ ...activity, duration: duration });
     }
 
     const isValid = newActivity.name === '';
@@ -56,7 +56,7 @@ function EditActivity(props) {
     const handleSubmit = action => {
 
 
-        const response = fetch(`http://localhost:5001/updateMeal/${activity._id}`, {      //Api call to update the todo status
+        const response = fetch(`http://localhost:5001/updateWorkout/${activity._id}`, {      //Api call to update the todo status
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

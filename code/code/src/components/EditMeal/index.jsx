@@ -51,7 +51,7 @@ function EditActivity(props) {
     const handleSlider = e => {
         console.log("TARDET",e.target)
         const calories = `${e.target.value} cal`;
-        setActivity({ ...activity, calories: calories });
+        setNewActivity({ ...activity, calories: calories });
     }
 
     const isValid = newActivity.name === '';

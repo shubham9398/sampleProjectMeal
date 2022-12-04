@@ -61,7 +61,8 @@ export const updateWorkout=async(req)=>{
 
 export const deleteWorkout= async(req,res)=>{
     try{
-    let deletedWorkout= await workoutModel.deleteOne({_id: req.params.id })
+        console.log(req.param.id);
+    let deletedWorkout= await workoutModel.findByIdAndDelete(req.params.id).exec();
     console.log("Deleteddddd",deletedWorkout)
     }
     catch(err){
